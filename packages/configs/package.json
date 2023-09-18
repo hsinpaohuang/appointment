@@ -1,0 +1,20 @@
+{
+  "name": "configs",
+  "license": "MIT",
+  "version": "0.0.0",
+  "main": "index.js",
+  "files": [
+    "eslint-base.js",
+    "eslint-quasar.js",
+    ".prettierrc.js",
+    "base-tsconfig.json"
+  ],
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0"
+  }
+}
