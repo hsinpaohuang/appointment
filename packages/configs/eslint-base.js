@@ -16,7 +16,7 @@ module.exports = {
 
     'airbnb-base',
 
-    'prettier',
+    // add prettier to the last item of extends of each eslint config file
   ],
 
   plugins: [
@@ -28,6 +28,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    'prettier/prettier': 'error',
 
     'no-param-reassign': 'off',
     'no-void': 'off',
@@ -79,6 +80,19 @@ module.exports = {
       { overrides: { '?': 'ignore', ':': 'ignore' } }
     ],
     'implicit-arrow-linebreak': 'off',
-    'linebreak-style': 'off'
+    'linebreak-style': 'off',
+    '@typescript-eslint/naming-convention': [
+      'warn',
+      {
+        selector: 'default',
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'allow',
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { varsIgnorePattern: '_', argsIgnorePattern: '_' },
+    ],
   }
 }

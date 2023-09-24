@@ -1,5 +1,7 @@
 module.exports = {
   extends: [
+    require.resolve('./eslint-base'),
+
     // Uncomment any of the lines below to choose desired strictness,
     // but leave only one uncommented!
     // See https://eslint.vuejs.org/rules/#available-rules
@@ -7,7 +9,7 @@ module.exports = {
     // 'plugin:vue/vue3-strongly-recommended', // Priority B: Strongly Recommended (Improving Readability)
     'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
-    './eslint-base.js',
+    'prettier',
   ],
 
   // https://eslint.vuejs.org/user-guide/#how-to-use-a-custom-parser
@@ -44,5 +46,14 @@ module.exports = {
 
   rules: {
     'vue/no-v-html': 'off',
+    'vue/html-self-closing': [
+      'error',
+      { html: { void: 'always', normal: 'always', component: 'always' } },
+    ],
+    "vue/component-name-in-template-casing": [
+      "error",
+      "PascalCase",
+      { registeredComponentsOnly: false },
+    ],
   },
 };
